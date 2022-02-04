@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import HeartIcon from "../../assets/icons/HeartIcon";
-import { BodyText } from "../Typography";
+import HeartIcon from "@/assets/icons/HeartIcon";
+import { BodyText } from "@/components/atoms/Typography";
 
 type ExploreCardProps = {
   title: string;
@@ -14,7 +14,7 @@ type ExploreCardProps = {
 const ExploreCard: React.FC<ExploreCardProps> = ({ title, href, imgSrc, alt }) => {
   return (
     <div className="relative min-h-explore-card max-w-explore-card bg-white grid gap-1.5">
-      <Image src={`/images/${imgSrc}`} alt={alt} />
+      <Image src={`/images/${imgSrc}`} alt={alt} layout='fill'/>
       <p className="font-medium text-center">
         From{" "}
         <Link href="/" >
