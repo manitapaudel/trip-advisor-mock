@@ -2,6 +2,7 @@ import React from "react";
 
 import ExploreCard from "@/components/atoms/ExploreCard";
 import { H3 } from "@/components/atoms/Typography";
+import style from "./more-to-explore.module.scss";
 
 type MoreToExploreProps = {
   className?: string;
@@ -30,11 +31,10 @@ const explores = [
 ];
 
 const MoreToExplore: React.FC<MoreToExploreProps> = ({ className = "" }) => {
- 
   return (
-    <div className={`bg-pink-100 p-4 rounded-md h-auto w-full ${className}`}>
+    <div className={`${style.container} ${className}`}>
       <H3>More to Explore</H3>
-      <div className="container mx-auto mt-2 grid grid-cols-3 gap-3">
+      <div className={style.subContainer}>
         {explores.map(({ title, href, imgSrc, alt }) => (
           <ExploreCard
             key={imgSrc}

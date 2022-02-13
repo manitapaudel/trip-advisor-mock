@@ -1,0 +1,20 @@
+.button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 50%;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  .icon {
+    height: 25px;
+    width: 25px;
+  }
+  .fillIcon {
+    color: red;
+  }
+}
