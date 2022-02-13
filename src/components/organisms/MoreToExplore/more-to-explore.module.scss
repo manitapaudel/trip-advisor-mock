@@ -1,0 +1,15 @@
+.container {
+  background-color: #fce7f3;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  .subContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
