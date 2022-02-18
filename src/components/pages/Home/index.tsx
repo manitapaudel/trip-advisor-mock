@@ -15,6 +15,8 @@ import Modal from "@/components/organisms/Modal";
 import Searchbar from "@/components/molecules/Searchbar";
 import MoreToExplore from"@/components/organisms/MoreToExplore";
 import Testimonials from "@/components/organisms/Testimonials";
+import style from "./home.module.scss";
+
 // import { UserContext } from "../../Providers/AuthProvider";
 
 const items = [
@@ -46,27 +48,27 @@ const Home = () => {
       ) : (
         ""
       )}
-      <div className="container mx-auto grid grid-cols-6 gap-2">
+      <div className={style.container}>
         {items.map(({ name, Icon }) => (
           <Link href="/" key={name}>
             <a> <ItemCard setModalOpen={setModalOpen}>
-              {name} <Icon />
+              {name} <Icon className={style.icon}/>
             </ItemCard></a>
            
           </Link>
         ))}
       </div>
-      {/* <div className="relative bg-search-bg w-full h-auto container mx-auto mt-3">
+      <div className={style.hero}>
         <Image
           src="/images/search_bg.png"
           alt="graphics"
-          className="mr-0 w-full h-full"
+          // className={style.img}
           layout='fill'
         />
-        <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
-      </div> */}
-      <MoreToExplore className="mt-4" />
-      <Testimonials className="mt-4" />
+        <Searchbar className={style.searchbar} />
+      </div>
+      <MoreToExplore className={style.marginClass} />
+      <Testimonials className={style.marginClass} />
     </>
   );
 };
