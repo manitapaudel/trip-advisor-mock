@@ -11,7 +11,7 @@ import SunIcon from "@/assets/icons/SunIcon";
 import BuildingIcon from "@/assets/icons/BuildingIcon";
 import CakeIcon from "@/assets/icons/CakeIcon";
 import ItemCard from "@/components/atoms/ItemCard";
-import Modal from "@/components/molecules/Modal";
+import Modal from "@/components/organisms/Modal";
 import Searchbar from "@/components/molecules/Searchbar";
 import MoreToExplore from"@/components/organisms/MoreToExplore";
 import Testimonials from "@/components/organisms/Testimonials";

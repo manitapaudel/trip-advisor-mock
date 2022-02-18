@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import InputField from "@/components/molecules/InputField";
 import { H2 } from "@/components/atoms/Typography";
+import InputField from "@/components/molecules/InputField";
+import style from "./register.module.scss";
 
 const Register = () => {
   const [formValues, setFormValues] = React.useState({
@@ -32,14 +33,14 @@ const Register = () => {
         <Image
           src="/images/trip-advisor-owl.svg"
           alt="The owl from tripadvisor logo"
-          width="200px"
-          height="200px"
+          width={225}
+          height={48}
         />
-        <H2 className="font-mono font-bold">
+        <H2 className={style.h2}>
           Sign in to unlock the best of Tripadvisor.
         </H2>
       </span>
-      <form className="mt-2" onSubmit={handleSubmit}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <InputField
           id="username"
           value={formValues.username}
@@ -67,7 +68,7 @@ const Register = () => {
         </InputField>
         <button
           type="submit"
-          className="uppercase w-full px-5 py-3 bg-green-600 hover:bg-green-800 text-white font-medium rounded-md tracking-widest mt-3"
+          className={style.button}
         >
           Submit
         </button>
