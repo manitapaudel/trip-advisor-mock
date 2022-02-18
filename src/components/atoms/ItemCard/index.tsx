@@ -1,5 +1,7 @@
 import React from "react";
 
+import style from "./item-card.module.scss"
+
 type CardProps = {
   className?: string;
   children:
@@ -17,7 +19,7 @@ const ItemCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`flex items-start justify-between border border-gray-900 rounded-2xl p-3 font-medium hover:bg-gray-900 hover:text-gray-50 min-h-card ${className}`}
+      className={`${style.container} ${className}`}
       onClick={() => setModalOpen(true)}
     >
       {children}

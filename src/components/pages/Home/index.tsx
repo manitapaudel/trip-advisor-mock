@@ -15,6 +15,8 @@ import Modal from "@/components/organisms/Modal";
 import Searchbar from "@/components/molecules/Searchbar";
 import MoreToExplore from"@/components/organisms/MoreToExplore";
 import Testimonials from "@/components/organisms/Testimonials";
+import style from "./home.module.scss";
+
 // import { UserContext } from "../../Providers/AuthProvider";
 
 const items = [
@@ -46,11 +48,11 @@ const Home = () => {
       ) : (
         ""
       )}
-      <div className="container mx-auto grid grid-cols-6 gap-2">
+      <div className={style.container}>
         {items.map(({ name, Icon }) => (
           <Link href="/" key={name}>
             <a> <ItemCard setModalOpen={setModalOpen}>
-              {name} <Icon />
+              {name} <Icon className={style.icon}/>
             </ItemCard></a>
            
           </Link>
