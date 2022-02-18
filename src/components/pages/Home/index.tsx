@@ -58,17 +58,17 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      {/* <div className="relative bg-search-bg w-full h-auto container mx-auto mt-3">
+      <div className={style.hero}>
         <Image
           src="/images/search_bg.png"
           alt="graphics"
-          className="mr-0 w-full h-full"
+          // className={style.img}
           layout='fill'
         />
-        <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
-      </div> */}
-      <MoreToExplore className="mt-4" />
-      <Testimonials className="mt-4" />
+        <Searchbar className={style.searchbar} />
+      </div>
+      <MoreToExplore className={style.marginClass} />
+      <Testimonials className={style.marginClass} />
     </>
   );
 };
