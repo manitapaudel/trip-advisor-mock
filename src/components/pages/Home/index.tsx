@@ -56,7 +56,7 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      <div className="relative bg-search-bg w-full h-auto container mx-auto mt-3">
+      {/* <div className="relative bg-search-bg w-full h-auto container mx-auto mt-3">
         <Image
           src="/images/search_bg.png"
           alt="graphics"
@@ -64,7 +64,7 @@ const Home = () => {
           layout='fill'
         />
         <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
-      </div>
+      </div> */}
       <MoreToExplore className="mt-4" />
       <Testimonials className="mt-4" />
     </>
