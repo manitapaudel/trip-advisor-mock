@@ -1,0 +1,94 @@
+@keyframes slidein {
+  from {
+    margin-left: -100%;
+    width: 60vw;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 60vw;
+  }
+}
+
+// @keyframes slideout {
+//   from {
+//     margin-left: 0%;
+//     width: 60vw;
+//   }
+
+//   to {
+//     margin-left: -100%;
+//     width: 60vw;
+//   }
+// }
+
+.container {
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 60vw;
+  height: 100vh;
+  background: #16a34a;
+  color: white;
+  padding: 24px;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+
+  .closeButton {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+
+    .icon {
+      height: 25px;
+      width: 25px;
+      color: white;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li,
+    .signIn {
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      a,
+      button {
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+        font-size: 18px;
+        font-weight: 500;
+        .icon {
+          height: 20px;
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+      &:hover {
+        background-color: #ffffff;
+        color: #16a34a !important;
+      }
+
+      button {
+        color: #ffffff;
+        padding: 0;
+
+        &:hover {
+          color: #16a34a !important;
+        }
+      }
+    }
+  }
+  //   &.close {
+  //     animation-duration: 0.5s;
+  //     animation-name: slideout;
+  //   }
+}
