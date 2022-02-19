@@ -9,18 +9,18 @@ import style from "./drawer.module.scss";
 import UserIcon from "@/assets/icons/UserIcon";
 
 type DrawerProps = {
-  // showModal: boolean;
+  showModal: boolean;
   setShowDrawer(a: boolean): void;
   setShowModal(a: boolean): void;
 };
 
-const Drawer: React.FC<DrawerProps> = ({ setShowDrawer, setShowModal }) => {
+const Drawer: React.FC<DrawerProps> = ({ setShowDrawer, setShowModal, showModal }) => {
     const drawerRef = React.useRef<HTMLDivElement>(null);
   
     useClickOutside(drawerRef, () => setShowDrawer(false));
 
   return (
-    <div className={style.container} ref={drawerRef}>
+    <div className={`${style.container} ${!showModal ? style.close : ""}`} ref={drawerRef}>
       <H2>Menu</H2>
       <button className={style.closeButton} onClick={() => setShowDrawer(false)}>
         <XCircleIcon className={style.icon} />

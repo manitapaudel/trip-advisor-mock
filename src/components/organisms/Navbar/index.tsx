@@ -74,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
             <MenuIcon className={style.icon}/>
           </button>
           {
-            showDrawer ? <Drawer setShowDrawer={setShowDrawer} setShowModal={setShowModal} /> : ""
+            showDrawer ? <Drawer setShowDrawer={setShowDrawer} setShowModal={setShowModal} showModal={showModal} /> : ""
           }
         </div>
       </div>
