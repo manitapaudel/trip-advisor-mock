@@ -3,9 +3,10 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 import Image from "next/image";
 
-import BellIcon from "@/assets/icons/BellIcon";
-import HeartIcon from "@/assets/icons/HeartLineIcon";
-import PencilIcon from "@/assets/icons/PencilIcon";
+
+import MenuIcon from "@/assets/icons/MenuIcon";
+import { navItems } from "@/constants";
+import Drawer from "@/components/organisms/Drawer";
 import style from "./navbar.module.scss"
 
 type NavbarProps = {
@@ -13,18 +14,10 @@ type NavbarProps = {
   setShowModal(a: boolean): void;
 };
 
-const navItems = [
-  {
-    name: "Review",
-    href: "/reviews",
-    Icon: PencilIcon,
-  },
-  { name: "Trips", href: "/trips", Icon: HeartIcon },
-  { name: "Alerts", href: "/alerts", Icon: BellIcon },
-];
 
 const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
   const [height, setHeight] = React.useState<number>(0);
+  const [showDrawer, setShowDrawer] = React.useState<boolean>(false);
   const router = useRouter();
 
   React.useEffect(() => {
@@ -32,6 +25,11 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
       setHeight(window.scrollY);
     });
   }, []);
+
+  const handleShowDrawer = () => {
+      setShowDrawer((prev) => !prev);
+  }
+
   return (
     <div
       className={`${style.container} ${
@@ -50,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
             />
           </a>
         </Link>
-        <div className={style.rightSection}>
+        <div className={style.mdRightSection}>
           {navItems.map(({ name, href, Icon }) => (
             <Link key={name} href={href}>
               <a
@@ -61,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
                 }`}
               >
                 <Icon className={style.icon} />
-                {name}
+                <span>{name}</span>
               </a>
             </Link>
           ))}
@@ -70,6 +68,14 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
           >
             Sign In
           </button>
+        </div>
+        <div className={style.smRightSection}>
+          <button onClick = {handleShowDrawer}>
+            <MenuIcon className={style.icon}/>
+          </button>
+          {
+            showDrawer ? <Drawer setShowDrawer={setShowDrawer} setShowModal={setShowModal} /> : ""
+          }
         </div>
       </div>
     </div>
