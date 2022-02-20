@@ -13,7 +13,7 @@
   .modal {
     position: relative;
     background-color: white;
-    width: 33.33%;
+    width: 60%;
     min-height: 50px;
     margin: 40px auto;
     padding: 20px;
@@ -37,6 +37,19 @@
         height: 20px;
         width: 20px;
       }
+    }
+    @media screen and (min-width: 600px) {
+      width: 50%;
+    }
+    @media screen and (min-width: 768px) {
+      width: 40%;
+    }
+    @media screen and (min-width: 960px) {
+      width: 33.33%;
+    }
+
+    @media screen and (min-width: 1600px) {
+      width: 25%;
     }
   }
 }
