@@ -1,4 +1,5 @@
 import React from "react";
+import Scrollbar from "react-perfect-scrollbar"
 
 import ExploreCard from "@/components/atoms/ExploreCard";
 import { H3 } from "@/components/atoms/Typography";
@@ -34,6 +35,7 @@ const MoreToExplore: React.FC<MoreToExploreProps> = ({ className = "" }) => {
   return (
     <div className={`${style.container} ${className}`}>
       <H3>More to Explore</H3>
+      <Scrollbar className={style.scrollbar}>
       <div className={style.subContainer}>
         {explores.map(({ title, href, imgSrc, alt }) => (
           <ExploreCard
@@ -45,6 +47,7 @@ const MoreToExplore: React.FC<MoreToExploreProps> = ({ className = "" }) => {
           />
         ))}
       </div>
+      </Scrollbar>
     </div>
   );
 };
