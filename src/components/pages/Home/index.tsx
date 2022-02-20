@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import useClickOutside from "@/hooks/useOutsideClick";
 import MessageIcon from "@/assets/icons/MessageIcon";
-import ChevronRightIcon from "@/assets/icons/ChevronrightIcon";
 import HorizontalDotsIcon from "@/assets/icons/HorizontalDotsIcon";
+import ChevronRightIcon from "@/assets/icons/ChevronRightIcon";
 import ChevronLeftIcon from "@/assets/icons/ChevronLeftIcon";
 import KeyIcon from "@/assets/icons/KeyIcon";
 import SunIcon from "@/assets/icons/SunIcon";
