@@ -5,11 +5,15 @@
   height: auto;
   border-radius: 8px;
 
+  .scrollbar {
+    width: 90%;
+  }
   .subContainer {
     width: 90%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    overflow: hidden;
+    gap: 20px;
   }
 }
