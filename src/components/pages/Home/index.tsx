@@ -16,6 +16,8 @@ import Searchbar from "@/components/molecules/Searchbar";
 import MoreToExplore from"@/components/organisms/MoreToExplore";
 import Testimonials from "@/components/organisms/Testimonials";
 import style from "./home.module.scss";
+import ChevronRightIcon from "@/assets/icons/ChevronrightIcon";
+import ChevronLeftIcon from "@/assets/icons/ChevronLeftIcon";
 
 // import { UserContext } from "../../Providers/AuthProvider";
 
@@ -25,6 +27,8 @@ const items = [
   { name: "Things to do", Icon: SunIcon },
   { name: "Restaurants", Icon: CakeIcon },
   { name: "Travel Forums", Icon: MessageIcon },
+  { name: "Flights", Icon: MessageIcon },
+  { name: "Cruises", Icon: MessageIcon },
   { name: "More", Icon: HorizontalDotsIcon },
 ];
 
@@ -57,6 +61,12 @@ const Home = () => {
            
           </Link>
         ))}
+        <button className={style.buttonRight}>
+          <ChevronRightIcon className={style.icon}/>
+        </button>
+        <button className={style.buttonLeft}>
+          <ChevronLeftIcon className={style.icon}/>
+        </button>
       </div>
       <div className={style.hero}>
         <Image

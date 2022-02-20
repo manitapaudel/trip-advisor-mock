@@ -1,7 +1,23 @@
+@mixin buttonClass {
+  position: absolute;
+  margin-top: 1px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  .icon {
+    height: 25px;
+    width: 25px;
+  }
+  @media screen and (min-width: 801px) {
+    display: none;
+  }
+}
+
 .container {
+  display: relative;
   margin: 20px auto;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 12px;
 
   a {
@@ -9,6 +25,23 @@
       height: 20px;
       width: 20px;
     }
+  }
+  @media screen and (max-width: 800px) {
+    // grid-template-rows: 1;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    overflow: hidden;
+  }
+  @media screen and (max-width: 1550px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .buttonRight {
+    @include buttonClass();
+    right: 20px;
+  }
+  .buttonLeft {
+    @include buttonClass();
+    left: 20px;
   }
 }
 .hero {
