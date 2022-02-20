@@ -1,23 +1,21 @@
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
-// import { useSelector } from "react-redux";
 
 import useClickOutside from "@/hooks/useOutsideClick";
 import MessageIcon from "@/assets/icons/MessageIcon";
+import ChevronRightIcon from "@/assets/icons/ChevronrightIcon";
 import HorizontalDotsIcon from "@/assets/icons/HorizontalDotsIcon";
+import ChevronLeftIcon from "@/assets/icons/ChevronLeftIcon";
 import KeyIcon from "@/assets/icons/KeyIcon";
 import SunIcon from "@/assets/icons/SunIcon";
 import BuildingIcon from "@/assets/icons/BuildingIcon";
 import CakeIcon from "@/assets/icons/CakeIcon";
 import ItemCard from "@/components/atoms/ItemCard";
-import Modal from "@/components/organisms/Modal";
 import Searchbar from "@/components/molecules/Searchbar";
+import Modal from "@/components/organisms/Modal";
 import MoreToExplore from"@/components/organisms/MoreToExplore";
 import Testimonials from "@/components/organisms/Testimonials";
 import style from "./home.module.scss";
-import ChevronRightIcon from "@/assets/icons/ChevronrightIcon";
-import ChevronLeftIcon from "@/assets/icons/ChevronLeftIcon";
 
 // import { UserContext } from "../../Providers/AuthProvider";
 
@@ -33,13 +31,9 @@ const items = [
 ];
 
 const Home = () => {
-  // const user = useSelector((state: any) => state.user.value);
-  // console.log({ user });
   const [modalOpen, setModalOpen] = React.useState(false);
   const myRef = React.useRef<HTMLDivElement>(null);
 
-  // const value = React.useContext(UserContext);
-  // console.log({ value });
   useClickOutside(myRef, () => {
     setModalOpen(false);
   });
@@ -69,12 +63,6 @@ const Home = () => {
         </button>
       </div>
       <div className={style.hero}>
-        <Image
-          src="/images/search_bg.png"
-          alt="graphics"
-          // className={style.img}
-          layout='fill'
-        />
         <Searchbar className={style.searchbar} />
       </div>
       <MoreToExplore className={style.marginClass} />
