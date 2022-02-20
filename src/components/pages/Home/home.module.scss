@@ -17,21 +17,16 @@
   display: relative;
   margin: 20px auto;
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(8, 1fr);
   gap: 12px;
-
+  overflow: hidden;
   a {
     .icon {
       height: 20px;
       width: 20px;
     }
   }
-  @media screen and (max-width: 800px) {
-    // grid-template-rows: 1;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    overflow: hidden;
-  }
-  @media screen and (max-width: 1550px) {
+  @media screen and (max-width: 1550px) and (min-width: 801px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
