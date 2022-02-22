@@ -16,6 +16,7 @@
 .container {
   display: relative;
   margin: 20px auto;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 12px;
@@ -42,9 +43,11 @@
 .hero {
   position: relative;
   background-image: url("/images/search-bg.webp");
-  width: 100%;
+  // background-repeat: no-repeat;
+  // object-fit: cover;
+  width: 90%;
   height: 348px;
-  margin-top: 20px;
+  margin: 20px auto;
 
   .searchbar {
     position: absolute;
