@@ -80,6 +80,7 @@ const Footer = () => {
         </ul>
       ))}
       </div>
+      <div className={style.right}>
       {footerElements.slice(3,4).map(({ title, subLinks }) => (
         <ul key={title}>
           <li>
@@ -94,6 +95,7 @@ const Footer = () => {
           </li>
         </ul>
       ))}
+      </div>
       </div>
     </div>
   );
