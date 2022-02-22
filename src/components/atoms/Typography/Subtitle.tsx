@@ -1,7 +1,9 @@
 import { TypographyProps } from "@/types/TypographyTypes";
+import style from "./typography.module.scss";
+
 
 const Subtitle: React.FC<TypographyProps> = ({ className = "", children }) => {
-  return <p className={`text-sm text-gray-600 ${className}`}>{children}</p>;
+  return <p className={`${style.subtitle} ${className}`}>{children}</p>;
 };
 
 export default Subtitle;
