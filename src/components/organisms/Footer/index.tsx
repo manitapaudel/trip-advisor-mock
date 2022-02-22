@@ -44,12 +44,28 @@ const footerElements = [
       { heading: "Travel Articles", href: "/" },
     ],
   },
+  {
+    title: "Tripadvisor Sites",
+    subLinks: [
+      { heading: "Discover your dream destination with Jetsetter", href: "/" },
+      { heading: "Book the best restaurants with TheFork", href: "/" },
+      { heading: "Book tours and attraction tickets on Viator", href: "/" },
+      { heading: "Read cruise reviews on Cruise Critic", href: "/" },
+      { heading: "Get airline seating charts on Seat Guru", href: "/" },
+      { heading: "Find vacation rentals on FlipKey", href: "/" },
+      { heading: "Search for holiday rentals on Holiday Lettings", href: "/" },
+      { heading: "Find a vacation home on Vacation Home Rentals", href: "/" },
+      { heading: "Plan and book your next trip with Reco Trip Designers", href: "/" },
+    ],
+  },
 ];
 
 const Footer = () => {
   return (
     <div className={style.container}>
-      {footerElements.map(({ title, subLinks }) => (
+      <div className={style.subContainer}>
+      <div className={style.left}>
+      {footerElements.slice(0,3).map(({ title, subLinks }) => (
         <ul key={title}>
           <li>
             <BodyText className={style.bodyText}>{title}</BodyText>
@@ -63,6 +79,22 @@ const Footer = () => {
           </li>
         </ul>
       ))}
+      </div>
+      {footerElements.slice(3,4).map(({ title, subLinks }) => (
+        <ul key={title}>
+          <li>
+            <BodyText className={style.bodyText}>{title}</BodyText>
+            <ul>
+              {subLinks.map(({ heading, href }) => (
+                <li key={heading}>
+                  <Subtitle className={style.subtitle}>{heading}</Subtitle>
+                  </li>
+              ))}
+            </ul>
+          </li>
+        </ul>
+      ))}
+      </div>
     </div>
   );
 };
