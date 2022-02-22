@@ -1,3 +1,5 @@
+import { BodyText } from "@/components/atoms/Typography";
+import Subtitle from "@/components/atoms/Typography/Subtitle";
 import style from "./footer.module.scss";
 
 const footerElements = [
@@ -27,6 +29,21 @@ const footerElements = [
       { heading: "Travel Articles", href: "/" },
     ],
   },
+  {
+    title: "Do Business with us",
+    subLinks: [
+      { heading: "Write a Review", href: "/" },
+      { heading: "Add a Place", href: "/" },
+      { heading: "Join", href: "/" },
+      { heading: "Travelers' Choice", href: "/" },
+      { heading: "Insurance", href: "/" },
+      { heading: "GreenLeaders", href: "/" },
+      { heading: "Blog", href: "/" },
+      { heading: "Help Center", href: "/" },
+      { heading: "Tripadvisor Plus", href: "/" },
+      { heading: "Travel Articles", href: "/" },
+    ],
+  },
 ];
 
 const Footer = () => {
@@ -35,10 +52,12 @@ const Footer = () => {
       {footerElements.map(({ title, subLinks }) => (
         <ul key={title}>
           <li>
-            {title}
+            <BodyText className={style.bodyText}>{title}</BodyText>
             <ul>
               {subLinks.map(({ heading, href }) => (
-                <li key={heading}>{heading}</li>
+                <li key={heading}>
+                  <Subtitle className={style.subtitle}>{heading}</Subtitle>
+                  </li>
               ))}
             </ul>
           </li>
