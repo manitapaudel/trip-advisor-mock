@@ -1,3 +1,6 @@
+import React from "react";
+import { Button, Card, CardBody, Collapse } from "reactstrap";
+
 import { BodyText } from "@/components/atoms/Typography";
 import Subtitle from "@/components/atoms/Typography/Subtitle";
 import style from "./footer.module.scss";
@@ -55,47 +58,75 @@ const footerElements = [
       { heading: "Find vacation rentals on FlipKey", href: "/" },
       { heading: "Search for holiday rentals on Holiday Lettings", href: "/" },
       { heading: "Find a vacation home on Vacation Home Rentals", href: "/" },
-      { heading: "Plan and book your next trip with Reco Trip Designers", href: "/" },
+      {
+        heading: "Plan and book your next trip with Reco Trip Designers",
+        href: "/",
+      },
     ],
   },
 ];
 
 const Footer = () => {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const toggle = () => {
+    setMenuOpen(!menuOpen)
+  }
   return (
     <div className={style.container}>
-      <div className={style.subContainer}>
-      <div className={style.left}>
-      {footerElements.slice(0,3).map(({ title, subLinks }) => (
-        <ul key={title}>
-          <li>
-            <BodyText className={style.bodyText}>{title}</BodyText>
-            <ul>
-              {subLinks.map(({ heading, href }) => (
-                <li key={heading}>
-                  <Subtitle className={style.subtitle}>{heading}</Subtitle>
-                  </li>
-              ))}
+      <div className={style.lgScreenMenu}>
+        <div className={style.left}>
+          {footerElements.slice(0, 3).map(({ title, subLinks }) => (
+            <ul key={title}>
+              <li>
+                <BodyText className={style.bodyText}>{title}</BodyText>
+                <ul>
+                  {subLinks.map(({ heading, href }) => (
+                    <li key={heading}>
+                      <Subtitle className={style.subtitle}>{heading}</Subtitle>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-      ))}
-      </div>
-      <div className={style.right}>
-      {footerElements.slice(3,4).map(({ title, subLinks }) => (
-        <ul key={title}>
-          <li>
-            <BodyText className={style.bodyText}>{title}</BodyText>
-            <ul>
-              {subLinks.map(({ heading, href }) => (
-                <li key={heading}>
-                  <Subtitle className={style.subtitle}>{heading}</Subtitle>
-                  </li>
-              ))}
+          ))}
+        </div>
+        <div className={style.right}>
+          {footerElements.slice(3, 4).map(({ title, subLinks }) => (
+            <ul key={title}>
+              <li>
+                <BodyText className={style.bodyText}>{title}</BodyText>
+                <ul>
+                  {subLinks.map(({ heading, href }) => (
+                    <li key={heading}>
+                      <Subtitle className={style.subtitle}>{heading}</Subtitle>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-      ))}
+          ))}
+        </div>
       </div>
+      <div className={style.mdScreenMenu}>
+        <Button
+          color="primary"
+          onClick={function noRefCheck(){}}
+          style={{
+            marginBottom: "1rem",
+          }}
+        >
+          Open
+        </Button>
+        <Collapse>
+          <Card>
+            <CardBody>
+              Anim pariatur cliche reprehenderit, enim eiusmod high life
+              accusamus terry richardson ad squid. Nihil anim keffiyeh
+              helvetica, craft beer labore wes anderson cred nesciunt sapiente
+              ea proident.
+            </CardBody>
+          </Card>
+        </Collapse>
       </div>
     </div>
   );
