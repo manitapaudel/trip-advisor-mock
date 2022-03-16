@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Card, CardBody, Collapse } from "reactstrap";
 
 import { BodyText } from "@/components/atoms/Typography";
 import Subtitle from "@/components/atoms/Typography/Subtitle";
 import style from "./footer.module.scss";
+import CollapseItem from "@/components/atoms/CollapseItem";
 
 const footerElements = [
   {
@@ -68,9 +68,9 @@ const footerElements = [
 
 const Footer = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const toggle = () => {
-    setMenuOpen(!menuOpen)
-  }
+  const toggle = () => setMenuOpen(!menuOpen)
+  console.log(menuOpen)
+    
   return (
     <div className={style.container}>
       <div className={style.lgScreenMenu}>
@@ -108,25 +108,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={style.mdScreenMenu}>
-        <Button
-          color="primary"
-          onClick={function noRefCheck(){}}
-          style={{
-            marginBottom: "1rem",
-          }}
-        >
-          Open
-        </Button>
-        <Collapse>
-          <Card>
-            <CardBody>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt sapiente
-              ea proident.
-            </CardBody>
-          </Card>
-        </Collapse>
+       <CollapseItem />
       </div>
     </div>
   );
