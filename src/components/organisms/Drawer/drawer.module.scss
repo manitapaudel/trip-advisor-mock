@@ -1,29 +1,5 @@
-@keyframes slidein {
-  from {
-    margin-left: -100%;
-    width: 60vw;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 60vw;
-  }
-}
-
-// @keyframes slideout {
-//   from {
-//     margin-left: 0%;
-//     width: 60vw;
-//   }
-
-//   to {
-//     margin-left: -100%;
-//     width: 60vw;
-//   }
-// }
-
 .container {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 60vw;
@@ -31,9 +7,8 @@
   background: #16a34a;
   color: white;
   padding: 24px;
-  animation-duration: 0.5s;
-  animation-name: slidein;
-
+  transform: translateX(-100%);
+  transition: transform 0.3s linear;
   .closeButton {
     position: absolute;
     top: 5px;
@@ -87,8 +62,4 @@
       }
     }
   }
-  //   &.close {
-  //     animation-duration: 0.5s;
-  //     animation-name: slideout;
-  //   }
 }
