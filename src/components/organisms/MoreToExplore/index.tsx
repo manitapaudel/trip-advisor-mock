@@ -1,5 +1,4 @@
 import React from "react";
-import Scrollbar from "react-perfect-scrollbar"
 
 import ExploreCard from "@/components/atoms/ExploreCard";
 import { H3 } from "@/components/atoms/Typography";
