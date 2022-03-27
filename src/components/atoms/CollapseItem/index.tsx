@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 
 import PlusIcon from "@/assets/icons/PlusIcon";
 import style from "./collapse-item.module.scss";
