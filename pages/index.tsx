@@ -2,13 +2,12 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import UnauthenticatedLayout from 'src/layouts/UnauthenticatedLayout';
 import useClickOutside from "@/hooks/useOutsideClick";
 import Modal from "@/components/organisms/Modal";
-import Navbar from '@/components/organisms/Navbar';
 import HomePage from '@/components/pages/Home'
 import Register from "@/components/pages/Register";
 import styles from '../styles/Home.module.css'
-import UnauthenticatedLayout from 'src/layouts/UnauthenticatedLayout';
 
 const Home: NextPage = () => {
   const modalRef = React.useRef<HTMLDivElement>(null);
