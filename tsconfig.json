@@ -14,6 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "tsBuildInfoFile": "./my.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
       "@/assets/*": ["src/assets/*"],

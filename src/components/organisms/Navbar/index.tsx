@@ -1,19 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Image from "next/image";
-
 
 import MenuIcon from "@/assets/icons/MenuIcon";
 import { navItems } from "@/constants";
 import Drawer from "@/components/organisms/Drawer";
-import style from "./navbar.module.scss"
+import style from "./navbar.module.scss";
 
 type NavbarProps = {
   showModal: boolean;
   setShowModal(a: boolean): void;
 };
-
 
 const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
   const [height, setHeight] = React.useState<number>(0);
@@ -27,15 +25,11 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
   }, []);
 
   const handleShowDrawer = () => {
-      setShowDrawer((prev) => !prev);
-  }
+    setShowDrawer((prev) => !prev);
+  };
 
   return (
-    <div
-      className={`${style.container} ${
-        height > 0 ? style.shadow : ""
-      }`}
-    >
+    <div className={`${style.container} ${height > 0 ? style.shadow : ""}`}>
       <div className={style.innerContainer}>
         <Link href="/">
           <a>
@@ -51,31 +45,25 @@ const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
         <div className={style.mdRightSection}>
           {navItems.map(({ name, href, Icon }) => (
             <Link key={name} href={href}>
-              <a
-                className={`${
-                  router.asPath === href
-                    ? style.active
-                    : ""
-                }`}
-              >
+              <a className={`${router.asPath === href ? style.active : ""}`}>
                 <Icon className={style.icon} />
                 <span>{name}</span>
               </a>
             </Link>
           ))}
-          <button
-            onClick={() => setShowModal(true)}
-          >
-            Sign In
-          </button>
+          <button onClick={() => setShowModal(true)}>Sign In</button>
         </div>
         <div className={style.smRightSection}>
-          <button onClick = {handleShowDrawer}>
-            <MenuIcon className={style.icon}/>
+          <button onClick={handleShowDrawer}>
+            <MenuIcon className={style.icon} />
           </button>
-          {
-            showDrawer ? <Drawer setShowDrawer={setShowDrawer} setShowModal={setShowModal} showModal={showModal} /> : ""
-          }
+          
+            <Drawer
+              setShowDrawer={setShowDrawer}
+              setShowModal={setShowModal}
+              showModal={showModal}
+              className={showDrawer ? style.open : ""}
+            />
         </div>
       </div>
     </div>

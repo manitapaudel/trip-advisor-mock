@@ -3,7 +3,6 @@ import React from "react";
 import { footerItems } from "@/constants";
 import { BodyText } from "@/components/atoms/Typography";
 import Subtitle from "@/components/atoms/Typography/Subtitle";
-import CollapseItem from "@/components/atoms/CollapseItem";
 import style from "./footer.module.scss";
 import AccordionMenu from "../AccordionMenu";
 
